@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #ff9100;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: url(images/bg.png) top no-repeat;
+  background-size: cover;
+  animation: bgAnim 1.5s forwards;
+}
+
+@keyframes bgAnim {
+  0% {
+    opacity: 0.2;
+    background-position: bottom;
+  }
+  30% {
+    opacity: 1;
+    background-position: bottom;
+  }
+  100% {
+    opacity: 1;
+    background-position: top;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  border: 0.1rem solid #fff;
+  border-radius: 1rem;
+  padding: 10rem 5rem 8rem 5rem;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  isolation: isolate;
+  opacity: 0;
+  animation: formAnim 2s 1.2s forwards;
+}
+
+@keyframes formAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: chocolate;
+  filter: blur(2rem);
+  user-select: none;
+  z-index: -1;
+  transition: opacity 0.1s;
+}
+
+.form-heading {
+  position: absolute;
+  top: 0;
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 200;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.2s;
+}
+
+.form-input {
+  width: 35rem;
+  height: 2rem;
+  padding: 1rem;
+  background-color: transparent;
+  border: 0.1rem solid #fff;
+  outline: none;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #fff;
+  border-radius: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.form-input::placeholder {
+  color: #fff;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group i {
+  position: absolute;
+  top: 50%;
+  right: 3rem;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.form-btn {
+  padding: 1rem;
+  border: 0.1rem solid #fff;
+  background-color: rgba(210, 105, 30, 0.451);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-btn:hover {
+  background-color: rgba(236, 109, 19, 0.451);
+}
+
+@media (max-width: 550px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 45%;
+  }
+}
